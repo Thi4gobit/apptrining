@@ -1,7 +1,9 @@
 
-const Balloon = ({content}) => {
+import styles from "./Ballon.module.css"
+
+const Balloon = ({ content }) => {
     return (
-        <div className="balloon">
+        <div className={`${styles.balloon}`}>
             {content}
         </div>
     );
