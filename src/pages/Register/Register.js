@@ -2,7 +2,9 @@ import styles from "./Register.module.css"
 
 const Register = () => {
     return (
-        <div>
+        <div className="container-fluid px-0 ps-md-3">
+            <div className={styles.container1}></div>
+            <div className={styles.title}>New Workout</div>
             <form className={styles.form}>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Running"/>
@@ -17,16 +19,16 @@ const Register = () => {
                     <label class="form-check-label" for="inlineRadio3">Swimming</label>
                 </div>
 
-                <div className="mb-3 col-md-3">
-                    <label htmlFor="exampleInputDate" className="form-label">Date</label>
-                    <input type="date" className="form-control-sm" id="exampleInputDate" aria-describedby="dateHelp" required/>
+                <div className="mb-3 mt-3 col">
+                    <label htmlFor="exampleInputDate" className="form-label d-block">Date</label>
+                    <input type="date" className="form-control-sm d-block" id="exampleInputDate" aria-describedby="dateHelp" max={new Date().toISOString().split("T")[0]} required/>
                 </div>
 
-                <div className="mb-3 col-md-2">
-                    <label htmlFor="exampleInputLength" className="form-label">Length (km)</label>
+                <div className="mb-3 col">
+                    <label htmlFor="exampleInputLength" className="form-label d-block">Length (km)</label>
                     <input 
                         type="number" 
-                        className="form-control-sm" 
+                        className="form-control-sm d-block" 
                         id="exampleInputLength" 
                         aria-describedby="lenghtHelp" 
                         required 
@@ -40,11 +42,11 @@ const Register = () => {
                     />
                 </div>
                 
-                <div className="mb-3 col-md-2">
-                    <label htmlFor="exampleInputHour" className="form-label">Hours</label>
+                <div className="mb-3 col">
+                    <label htmlFor="exampleInputHour" className="form-label d-block">Hours</label>
                     <input 
                         type="number" 
-                        className="form-control-sm" 
+                        className="form-control-sm d-block" 
                         id="exampleInputHour" 
                         aria-describedby="hourtHelp" 
                         required 
@@ -62,11 +64,11 @@ const Register = () => {
                     />
                 </div>
 
-                <div className="mb-3 col-md-2">
-                    <label htmlFor="exampleInputMinute" className="form-label">Minutes</label>
+                <div className="mb-3 col">
+                    <label htmlFor="exampleInputMinute" className="form-label d-block">Minutes</label>
                     <input 
                         type="number" 
-                        className="form-control-sm" 
+                        className="form-control-sm d-block" 
                         id="exampleInputMinute" 
                         aria-describedby="minutetHelp" 
                         required 
@@ -84,11 +86,11 @@ const Register = () => {
                     />
                 </div>
 
-                <div className="mb-3 col-md-2">
-                    <label htmlFor="exampleInputSecond" className="form-label">Seconds</label>
+                <div className="mb-3 col">
+                    <label htmlFor="exampleInputSecond" className="form-label d-block">Seconds</label>
                     <input 
                         type="number" 
-                        className="form-control-sm" 
+                        className="form-control-sm d-block" 
                         id="exampleInputSecond" 
                         aria-describedby="secondtHelp" 
                         required 
@@ -106,11 +108,11 @@ const Register = () => {
                     />
                 </div>
 
-                <div className="mb-3 col-md-2">
-                    <label htmlFor="exampleInputEnergy" className="form-label">Energy (kcal)</label>
+                <div className="mb-3 col">
+                    <label htmlFor="exampleInputEnergy" className="form-label d-block">Energy (kcal)</label>
                     <input 
                         type="number" 
-                        className="form-control-sm" 
+                        className="form-control-sm d-block" 
                         id="exampleInputEnergy" 
                         aria-describedby="energytHelp" 
                         min="0" 
@@ -127,11 +129,11 @@ const Register = () => {
                     />
                 </div>
 
-                <div className="mb-3 col-md-2">
-                    <label htmlFor="exampleInputFrequency" className="form-label">Frequency (bpm)</label>
+                <div className="mb-3 col">
+                    <label htmlFor="exampleInputFrequency" className="form-label d-block">Frequency (bpm)</label>
                     <input 
                         type="number" 
-                        className="form-control-sm" 
+                        className="form-control-sm d-block" 
                         id="exampleInputFrequency" 
                         aria-describedby="frequencytHelp" 
                         min="0" 
@@ -148,7 +150,7 @@ const Register = () => {
                     />
                 </div>
 
-                <button type="submit" class="btn btn-primary">Register</button>
+                <button type="submit" class="btn btn-primary btn-sm mt-4 mb-4 d-block">Register</button>
             </form>
         </div>
     );
