@@ -15,17 +15,19 @@
     color: #ccc;
 }
 
-@media screen and (max-width: 1200px) {
-  .balloon {
+.justify {
     justify-content: left;
+}
+
+@media screen and (max-width: 1200px) {
+  .effect {
     transition: 0.3s ease-in-out;
   }
 
-  .balloon:hover {
+  .effect:hover {
     cursor: pointer;
     background-color: #f0f0f0; /* Cor de fundo quando estiver em hover */
     color: #000;
-
   }
 }
 

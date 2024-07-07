@@ -1,7 +1,8 @@
 
-import styles from "./App.css";
+
 import Navbar from '../src/components/Navbar';
 
+import styles from './App.css'
 import Workouts from './pages/Workouts/Workouts';
 import Register from './pages/Register/Register';
 import Resume from './pages/Resumes/Resumes';
@@ -10,11 +11,11 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="container-fulid" style={{ backgroundColor: `#000` }}>
+    <div className="container-fulid" style={{ backgroundColor: `#000`}} >
       <div className="container-xxl">
         <BrowserRouter>
           <div className="row">
-            <div className="col-md-auto px-0">
+            <div className={`col-md-auto px-0 ${styles.media1}`}>
               <Navbar />
             </div>
             <div className="col-md px-0">

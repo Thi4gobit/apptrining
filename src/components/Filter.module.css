@@ -7,7 +7,7 @@
 
 .container1 {
     background-color: #1f1f1f;
-    height: 80px;
+    min-height: 80px;
     padding-bottom: 10px;
     padding-inline: 10px;
     align-content: end;

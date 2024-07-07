@@ -7,3 +7,13 @@
 body {
   background-color: #000;
 }
+
+.media1 {
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .media1 {
+    min-height: 100vh;
+  }
+}

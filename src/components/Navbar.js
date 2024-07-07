@@ -2,23 +2,6 @@ import { NavLink } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
 const Navbar = () => {
-    /*
-    return (
-        <nav className={`container-fluid ${styles.area}`}>
-            <ul className={`row row-cols-3 row-cols-md-1 ${styles.links_list}`}>
-                <li className='col-3'>
-                    <NavLink to="/Register">Register</NavLink>
-                </li>
-                <li className='col-3'>
-                    <NavLink to="/">Workouts</NavLink>  
-                </li>
-                <li className='col-3'>
-                    <NavLink to="/Resume">Resume</NavLink>
-                </li>
-            </ul>
-        </nav>
-    );
-    */
     return (
         <>
           {/* Navbar para telas maiores */}

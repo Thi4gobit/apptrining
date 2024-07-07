@@ -8,7 +8,7 @@ const database = require('../../database.json');
 export default function FilteredWorkouts() {
     const [workoutList] = useState(database);
     const [selectedActivityType, setSelectedActivityType] = useState('All Activities');
-    const [startDate, setStartDate] = useState('2024-01-01');
+    const [startDate, setStartDate] = useState('2023-01-01');
     const [endDate, setEndDate] = useState(`${new Date().toISOString().split("T")[0]}`);
 
     const filteredWorkouts = workoutList.filter(workout => {
@@ -29,13 +29,18 @@ export default function FilteredWorkouts() {
     const totalCalories = filteredWorkouts.reduce((acc, workout) => acc + workout.kcal, 0);
     const totalBpm = filteredWorkouts.reduce((acc, workout) => acc + workout.bpm, 0);
 
-    const averageBpm = totalBpm / filteredWorkouts.length;
+    const averageBpm = Math.round(totalBpm / filteredWorkouts.length);
     
     const paceMinutes = Math.floor(totalDuration / (totalDistanceForPace) / 60);
     const paceSeconds = Math.floor(totalDuration / (totalDistanceForPace) % 60);
     const pace = `${paceMinutes}:${String(paceSeconds).padStart(2, '0')}`;
-    
 
+    let turn = '';
+    if (filteredWorkouts.length > 0 && filteredWorkouts[0].activity) {
+    turn = filteredWorkouts[0].activity.turn === '1' ? '' : filteredWorkouts[0].activity.turn;
+    }
+    const unit = filteredWorkouts[0].activity.unit.unit
+    
     return (
         <div className="container-fluid px-0 ps-md-3">
             <Filter
@@ -44,7 +49,7 @@ export default function FilteredWorkouts() {
                 setStartDate={setStartDate}
                 setEndDate={setEndDate}
             />
-            <div className={styles.title}>Resume | {selectedActivityType} {startDate && `| from ${startDate}`} {endDate && `to ${endDate}`} </div>
+            <div className={styles.title}>{`Resume`} </div>
             {selectedActivityType === 'All Activities' ? (
                 <Resume 
                     totalDuration={totalDuration} 
@@ -57,7 +62,7 @@ export default function FilteredWorkouts() {
                 <Resume 
                     totalDuration={totalDuration} 
                     totalDistance={totalDistance} 
-                    pace={pace}
+                    pace={`${pace} min/${turn}${unit}`}
                     totalCalories={totalCalories} 
                     averageBpm={averageBpm}
                 />

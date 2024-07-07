@@ -13,7 +13,7 @@ const Workout = ({data}) => {
     const allSeconds = (data.duration.seconds) + (data.duration.minutes * 60) + (data.duration.hours * 3600);
     const dist = data.length / data.activity.unit.value_km;
     let turn;
-    if (data.activity.turn == 1) {
+    if (data.activity.turn === 1) {
     turn = "";
     } else {
     turn = data.activity.turn;
@@ -22,8 +22,6 @@ const Workout = ({data}) => {
     const paceSeconds = Math.floor(allSeconds / (dist / data.activity.turn) % 60);
     const pace = `${paceMinutes}:${String(paceSeconds).padStart(2, '0')}`;
     
-    
-
     return (
             <ul className={`row px-0 start-0 ${styles.workout}`} key={data.id}>
                 <li className='col-3 col-md-auto px-0 d-none d-xl-block'>
@@ -48,8 +46,8 @@ const Workout = ({data}) => {
                     <Balloon content={<i className={`bi bi-ev-station`}> | {data.kcal} kcal</i>} />
                 </li>
 
-                <li className="col-12  d-block d-xl-none" onClick={toggleDetails}>
-                    <Balloon content={`${data.date}  -  ${data.activity.name}`}/>
+                <li className="col-12 d-block d-xl-none" style={{ width: `400px` }} onClick={toggleDetails}>
+                    <Balloon content={`${data.date}  -  ${data.activity.name}`} extraClassName1={"effect"} extraClassName2={"justify"} />
                 </li>
                 {detailsVisible && (
                     <li className={`col-12 d-block d-xl-none ${styles.text}`}>

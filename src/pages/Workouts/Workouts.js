@@ -8,7 +8,7 @@ const database = require('../../database.json');
 const Workouts = () => {
     const [workoutList] = useState(database);
     const [selectedActivityType, setSelectedActivityType] = useState('All Activities');
-    const [startDate, setStartDate] = useState('2024-01-01');
+    const [startDate, setStartDate] = useState('2023-01-01');
     const [endDate, setEndDate] = useState(`${new Date().toISOString().split("T")[0]}`);
 
     const filteredWorkouts = workoutList.filter(workout => {
@@ -27,7 +27,7 @@ const Workouts = () => {
                 setStartDate={setStartDate}
                 setEndDate={setEndDate}
             />
-            <div className={styles.title}>Workouts | {selectedActivityType} {startDate && `| from ${startDate}`} {endDate && `to ${endDate}`} </div>
+            <div className={styles.title}>{`Workouts`} </div>
             {filteredWorkouts.map((workout) => (
                 <Workout key={workout.id} data={workout} />
             ))}

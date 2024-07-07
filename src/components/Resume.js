@@ -12,21 +12,21 @@ const formatDuration = (duration) => {
 
 const Resume = ({totalDuration, totalDistance, pace, totalCalories, averageBpm}) => {
     return (
-        <ul className={`row px-0 start-0 ${styles.workout}`}>
-            <li className='col-12 px-0 d-block '>
-                <Balloon content={<i className={`bi bi-binoculars`}>{` | ${totalDistance.toFixed(2)} km (Total)`}</i>} />
+        <ul className={`row px-2 start-0 d-block ${styles.resume}`}>
+            <li className='mb-2 px-0' style={{ width: `200px` }} >
+                <Balloon content={<i className={`bi bi-binoculars`}>{` | ${totalDistance.toFixed(1)} km (Total)`}</i>} extraClassName2={"justify"} />
             </li>
-            <li className='col-12 px-0 d-block'>
-                <Balloon content={<i className={`bi bi-clock-fill`}>{` | ${formatDuration(totalDuration)} (Total)`}</i>} />
+            <li className='mb-2 px-0' style={{ width: `200px` }} >
+                <Balloon content={<i className={`bi bi-clock-fill`}>{` | ${formatDuration(totalDuration)} (Total)`}</i>} extraClassName2={"justify"} />
             </li>
-            <li className='col-12 px-0 d-block'>
-                <Balloon content={<i className={`bi bi-stopwatch-fill`}>{` | ${pace} `}</i>} />
+            <li className='mb-2 px-0' style={{ width: `200px` }} >
+                <Balloon content={<i className={`bi bi-stopwatch-fill`}>{` | ${pace} `}</i>} extraClassName2={"justify"} />
             </li>
-            <li className='col-12 px-0 d-block'>
-                <Balloon content={<i className={`bi bi-heart-fill`}>{` | ${averageBpm} bpm (Average)`}</i>} />
+            <li className='mb-2 px-0' style={{ width: `200px` }} >
+                <Balloon content={<i className={`bi bi-heart-fill`}>{` | ${averageBpm} bpm (Average)`}</i>} extraClassName2={"justify"} />
             </li>
-            <li className='col-12 px-0 d-block'>
-                <Balloon content={<i className={`bi bi-ev-station`}>{` | ${totalCalories} kcal (Total)`}</i>} />
+            <li className='mb-2 px-0' style={{ width: `200px` }} >
+                <Balloon content={<i className={`bi bi-ev-station`}>{` | ${totalCalories} kcal (Total)`}</i>} extraClassName2={"justify"} />
             </li> 
         </ul>
     );
